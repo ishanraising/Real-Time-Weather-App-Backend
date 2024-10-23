@@ -92,43 +92,34 @@ MySQL Workbench is a graphical user interface for managing MySQL databases.
 5. **Access the API**: 
    - Once the application is running, you can access the API at `http://localhost:8081/weather`.
 ## Key Directories and Files
-    weatherapplication/
-│
-├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   │   └── com/
-│   │   │       └── example/
-│   │   │           └── weatherapplication/
-│   │   │               ├── WeatherApplication.java         # Main application class
-│   │   │               ├── config/                        # Configuration files
-│   │   │               │   └── WebConfig.java            # Web configuration (CORS, etc.)
-│   │   │               ├── controller/                    # REST controllers
-│   │   │               │   └── WeatherController.java     # Handles API requests for weather data
-│   │   │               ├── model/                         # Model classes for data
-│   │   │               │   ├── Weather.java               # Weather entity
-│   │   │               │   └── WeatherHistory.java        # Weather history entity
-│   │   │               ├── repository/                    # Repository interfaces for data access
-│   │   │               │   └── WeatherRepository.java     # Interface for CRUD operations on Weather
-│   │   │               ├── service/                       # Service layer classes
-│   │   │               │   └── WeatherService.java        # Business logic related to weather
-│   │   │               └── exception/                     # Custom exception classes
-│   │   │                   └── ResourceNotFoundException.java  # Exception for not found resources
-│   │   ├── resources/
-│   │   │   ├── application.properties                     # Application configuration properties
-│   │   │   └── static/                                   # Static resources (if any)
-│   │   │       └── images/                               # Images or other static files
-│   │   │       └── css/                                  # CSS files (if any)
-│   │   └── test/                                         # Test classes
-│   │       └── java/
-│   │           └── com/
-│   │               └── example/
-│   │                   └── weatherapplication/
-│   │                       └── WeatherApplicationTests.java # Unit tests for the application
-│   └── pom.xml                                           # Maven configuration file
-│
-├── .gitignore                                             # Git ignore file
-└── README.md                                             # Project documentation
+  /src/main/java/com/example/weatherapplication/
+
+WeatherApplication.java: The main Spring Boot application class. This is the entry point where the application starts.
+`/src/main/java/com/example/weatherapplication/config/`
+
+WebConfig.java: Contains the configuration settings for the application, such as enabling CORS or setting up web-related configurations.
+`/src/main/java/com/example/weatherapplication/controller/`
+
+WeatherController.java: This is the REST controller that handles HTTP requests related to weather data. It contains the endpoints for fetching current weather data and weather history.
+`/src/main/java/com/example/weatherapplication/model/`
+
+Weather.java: The model (or entity) class that represents the structure of the weather data.
+WeatherHistory.java: Represents the weather history entity, storing details such as city, maximum, and minimum temperatures of the day.
+`/src/main/java/com/example/weatherapplication/repository/`
+
+WeatherRepository.java: This is the repository interface that extends JpaRepository or CrudRepository to interact with the database for CRUD operations on the Weather entity.
+`/src/main/java/com/example/weatherapplication/service/`
+
+WeatherService.java: Contains the business logic of the application related to fetching and processing weather data. The controller interacts with this service class to serve the responses to the client.
+`/src/main/java/com/example/weatherapplication/exception/`
+
+ResourceNotFoundException.java: A custom exception used to handle cases where a requested resource (such as a city or weather data) is not found.
+`/src/main/resources/`
+
+application.properties: This configuration file is where the database connection details (such as URL, username, password) and other properties (e.g., port number, external API keys) are defined.
+`/src/test/java/com/example/weatherapplication/`
+
+WeatherApplicationTests.java: This is where unit tests for the application reside. It contains test cases for the various functionalities in the weather application.
 
 ## Contact
 For any questions or inquiries, please reach out to [Ishan Raising](ishanraising98@gmail.com).
