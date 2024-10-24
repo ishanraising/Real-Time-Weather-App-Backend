@@ -69,7 +69,10 @@ MySQL Workbench is a graphical user interface for managing MySQL databases.
      CREATE DATABASE WeatherApplication;
      ```
 
-
+## Clone Repository
+```bash
+git clone https://github.com/ishanraising/Real-Time-Weather-App-Backend
+```
 
 ## Running the Application
 1. **Open IntelliJ IDEA**.
